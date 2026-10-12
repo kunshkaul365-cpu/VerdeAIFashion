@@ -19,8 +19,7 @@ export default function ProductCatalog({ catalogRef }) {
       }
       // Gender filter
       if (selectedGender !== "All") {
-        if (selectedGender === "Women" && product.gender === "Men") return false;
-        if (selectedGender === "Men" && product.gender === "Women") return false;
+        if (product.gender !== selectedGender) return false;
       }
       // Search query filter (name, materials, vibeTags, occasions)
       if (searchQuery.trim()) {
@@ -110,7 +109,7 @@ export default function ProductCatalog({ catalogRef }) {
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             {/* Gender Toggle */}
             <div className="bg-earth-100 p-1 rounded-full flex items-center text-xs font-medium border border-earth-200">
-              {["All", "Women", "Men"].map((gender) => (
+              {["All", "Women", "Men", "Unisex"].map((gender) => (
                 <button
                   key={gender}
                   onClick={() => setSelectedGender(gender)}
