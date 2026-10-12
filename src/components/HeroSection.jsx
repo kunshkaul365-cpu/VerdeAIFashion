@@ -7,34 +7,31 @@ export default function HeroSection({ onExploreClick }) {
 
   return (
     <section className="relative overflow-hidden pt-6 pb-16 lg:pt-10 lg:pb-24">
-      {/* Decorative subtle background mesh */}
+      {/* Background decoration */}
       <div className="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-verde-200/40 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-0 -z-10 w-[400px] h-[400px] bg-earth-200/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Text & AI CTA Column */}
+          {/* Main content */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left space-y-6">
             
-            {/* Tag badge */}
             <div className="inline-flex items-center gap-2 bg-verde-100/90 text-verde-900 border border-verde-300/80 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider w-fit">
               <Sparkles className="w-3.5 h-3.5 text-verde-700" />
               <span>Next-Gen AI Fashion Engine • SS '26</span>
             </div>
 
-            {/* Editorial Headline */}
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-verde-950 leading-[1.12]">
               Conscious Luxury, <br />
               <span className="italic font-normal text-earth-700">intelligently tailored</span> for your lifestyle.
             </h1>
 
-            {/* Description */}
             <p className="text-base sm:text-lg text-charcoal/70 max-w-xl leading-relaxed">
               We replace synthetic microplastics with pure French linen, organic hemp, and cruelty-free peace silk. Our real-time AI styling engine eliminates impulse returns by building your perfect eco-capsule.
             </p>
 
-            {/* CTAs */}
+            {/* Actions */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <button
                 onClick={() => setIsQuizOpen(true)}
@@ -53,7 +50,7 @@ export default function HeroSection({ onExploreClick }) {
               </button>
             </div>
 
-            {/* Quick Stylist Prompt Helper */}
+            {/* Quick prompt */}
             <div className="pt-2">
               <div
                 onClick={() => setIsAiDrawerOpen(true)}
@@ -71,7 +68,7 @@ export default function HeroSection({ onExploreClick }) {
               </div>
             </div>
 
-            {/* Trust Eco Badges */}
+            {/* Eco metrics */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-earth-200/70 text-charcoal/80">
               <div className="flex items-center gap-2">
                 <Droplets className="w-4 h-4 text-verde-600 flex-shrink-0" />
@@ -89,11 +86,10 @@ export default function HeroSection({ onExploreClick }) {
 
           </div>
 
-          {/* Right Visual Editorial Collage */}
+          {/* Featured media card */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
-              {/* Main Fashion Editorial Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-earth-100">
                 <img
                   src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1000&q=85"
@@ -102,13 +98,11 @@ export default function HeroSection({ onExploreClick }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
-                {/* Floating Eco Impact Pill inside image */}
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-2 text-xs font-semibold text-verde-900">
                   <Leaf className="w-3.5 h-3.5 text-verde-600" />
                   <span>100% Ahimsa Peace Silk</span>
                 </div>
 
-                {/* Bottom Card Overlay */}
                 <div className="absolute bottom-6 left-6 right-6 text-white text-left">
                   <p className="text-xs uppercase tracking-widest text-verde-200 font-semibold">Featured Capsule</p>
                   <h3 className="font-serif text-2xl font-normal">Sylvan Botanical Tiered Sundress</h3>
@@ -116,7 +110,7 @@ export default function HeroSection({ onExploreClick }) {
                 </div>
               </div>
 
-              {/* Floating AI Recommendation Widget Overlay */}
+              {/* Floating recommendation card */}
               <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md border border-verde-200 p-4 rounded-2xl shadow-xl max-w-[280px] hidden sm:block text-left animate-pulse-subtle">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-6 h-6 rounded-full bg-verde-600 text-white flex items-center justify-center text-xs font-bold">

@@ -13,10 +13,7 @@ export function saveApiKey(key) {
   }
 }
 
-/**
- * Intelligent Local Rule & Heuristic Matcher
- * Runs when offline, rate-limited, or no API key provided.
- */
+// Local outfit matcher fallback
 function localCurateOutfit({ occasion, aesthetic, weather, ecoPriority, gender }) {
   let filtered = [...PRODUCTS];
 
@@ -120,14 +117,12 @@ function localCurateOutfit({ occasion, aesthetic, weather, ecoPriority, gender }
   };
 }
 
-/**
- * Curate Personalized Outfits (OpenAI API if Key is present, fallback to local)
- */
+// Curate outfit recommendation
 export async function curatePersonalizedOutfit(preferences) {
   const apiKey = getSavedApiKey();
 
   if (!apiKey) {
-    // Artificial mini-delay to give a realistic AI thinking feel
+    // Simulated delay
     await new Promise(res => setTimeout(res, 600));
     return localCurateOutfit(preferences);
   }
@@ -225,14 +220,12 @@ Respond ONLY with valid JSON in this exact structure:
   }
 }
 
-/**
- * Natural Language AI Search & Stylist Assistant
- */
+// Natural language search helper
 export async function searchWithAiStylist(query) {
   const qLower = query.toLowerCase();
   const apiKey = getSavedApiKey();
 
-  // If live OpenAI key is available, use GPT for natural understanding
+  // OpenAI call if key exists
   if (apiKey) {
     try {
       const systemPrompt = `You are Aria, an intelligent and warm AI Eco-Stylist for VERDE Studio.
@@ -285,7 +278,7 @@ Respond ONLY in JSON format:
     }
   }
 
-  // Intelligent Local Semantic Matcher
+  // Local search fallback
   await new Promise(r => setTimeout(r, 400));
 
   // Extract budget if mentioned (e.g., "under 4000", "< 3500", "budget 5000")
@@ -353,9 +346,7 @@ Respond ONLY in JSON format:
   };
 }
 
-/**
- * Ask AI about product care, breathability, and sizing
- */
+// Product assistant helper
 export async function askProductAssistant(product, question) {
   const q = question.toLowerCase();
   await new Promise(r => setTimeout(r, 350));
