@@ -16,7 +16,7 @@ export default function StyleQuizModal() {
   const [occasion, setOccasion] = useState("Brunch");
   const [weather, setWeather] = useState("Warm & Breezy");
   const [ecoPriority, setEcoPriority] = useState("Max Water Savings");
-  const [gender, setGender] = useState("All");
+  const [gender, setGender] = useState("Women");
 
   if (!isQuizOpen) return null;
 
@@ -149,7 +149,7 @@ export default function StyleQuizModal() {
                   Shopping Preference:
                 </label>
                 <div className="flex gap-2">
-                  {["All", "Women", "Men"].map((g) => (
+                  {["Women", "Men", "Unisex"].map((g) => (
                     <button
                       key={g}
                       onClick={() => setGender(g)}

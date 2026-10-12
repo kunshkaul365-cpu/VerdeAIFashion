@@ -6,7 +6,7 @@ import { useStore } from "../context/StoreContext";
 
 export default function ProductCatalog({ catalogRef }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedGender, setSelectedGender] = useState("All");
+  const [selectedGender, setSelectedGender] = useState("Women");
   const [sortBy, setSortBy] = useState("featured");
   const [searchQuery, setSearchQuery] = useState("");
   const { setIsAiDrawerOpen, setIsQuizOpen } = useStore();
@@ -18,9 +18,7 @@ export default function ProductCatalog({ catalogRef }) {
         return false;
       }
       // Gender filter
-      if (selectedGender !== "All") {
-        if (product.gender !== selectedGender) return false;
-      }
+      if (product.gender !== selectedGender) return false;
       // Search query filter (name, materials, vibeTags, occasions)
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
@@ -109,7 +107,7 @@ export default function ProductCatalog({ catalogRef }) {
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             {/* Gender Toggle */}
             <div className="bg-earth-100 p-1 rounded-full flex items-center text-xs font-medium border border-earth-200">
-              {["All", "Women", "Men", "Unisex"].map((gender) => (
+              {["Women", "Men", "Unisex"].map((gender) => (
                 <button
                   key={gender}
                   onClick={() => setSelectedGender(gender)}
